@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GTOnePassSDK'
-  s.version          = '2.2.1'
+  s.version          = '2.2.3'
   s.summary          = '极验OnePassSDK'
   s.homepage         = 'https://www.geetest.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.frameworks = 'CFNetwork', 'CoreTelephony', 'Foundation', 'SystemConfiguration', 'UIKit'
   s.libraries = 'c++.1', 'z.1.2.8'
 
-  s.vendored_frameworks = 'SDK/TYRZSDK.framework', 'SDK/GTOnePass.framework'
+  s.vendored_frameworks = 'GTSDK/TYRZSDK.framework', 'GTSDK/GTOnePass.framework'
   s.resources = 'README.md'
 end

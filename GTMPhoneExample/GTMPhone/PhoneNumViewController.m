@@ -18,12 +18,9 @@
 #import "UIButton+GTM.h"
 #import "UIView+GTM.h"
 
-@import GTOnePass;
+#import <GTOnePass/GTOnePass.h>
 
-////网站主部署的用于test-Button的register接口
-//#define API1 @"http://dev.tongbancheng.com/api/verify/geetest/start_captcha?access_token=8b5efe542086595cb5c25426ccb20625&t=1512116140"
-////网站主部署的用于test-Button的validate接口
-//#define API2 @"http://www.geetest.com/demo/gt/validate-fullpage"
+//@import GTOnePass;
 
 //网站主部署的用于test-Button的register接口
 #define API1 @"http://www.geetest.com/demo/gt/register-fullpage"
@@ -124,6 +121,13 @@
 #endif
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+#ifdef LOADING
+    [self.progressView updateProgressState:GOPProgressStateError withError:nil];
+#endif
+}
+
 - (void)verifyPhoneNum {
     
     NSString *num = self.phoneNumTextField.text;
@@ -151,7 +155,8 @@
 #else
     [self.nextButton gtm_showIndicator];
 #endif
-    [self.captchaEx startGT3Captcha];
+//    [self.captchaEx startGT3Captcha];
+    [self startOnePass:nil];
 }
 
 - (void)startOnePass:(NSString *)validate {
@@ -293,8 +298,15 @@
         NSDictionary *dict = @{@"phone": phoneNumber};
         NSData *data = [NSJSONSerialization dataWithJSONObject:dict options:0 error:nil];
         req.HTTPBody = data;
+        req.timeoutInterval = 5;
         
         NSURLSessionTask *dataTask = [NSURLSession.sharedSession dataTaskWithRequest:req completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (!data) {
+#ifdef LOADING
+                [self.progressView updateProgressState:GOPProgressStateError withError:error];
+#endif
+                return;
+            }
             NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSString *pid = dict[@"process_id"];
             if (pid) {
@@ -344,11 +356,11 @@
 // put captcha result into OnePass
 - (void)gtCaptcha:(GT3CaptchaManager *)manager didReceiveCaptchaCode:(NSString *)code result:(NSDictionary *)result message:(NSString *)message {
     
-    if (![code isEqualToString:@"1"]) return;
-    
+//    if (![code isEqualToString:@"1"]) return;
+
     NSString *validate = [result objectForKey:@"geetest_validate"];
-    
-    if (!validate || validate.length != 32) return;
+
+//    if (!validate || validate.length != 32) return;
     
     [self startOnePass:validate];
 }
