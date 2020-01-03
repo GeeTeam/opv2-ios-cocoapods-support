@@ -417,6 +417,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPILER_INDEX_STORE_ENABLE = Default;
+				CURRENT_PROJECT_VERSION = 2001030916;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 2448B7W898;
 				ENABLE_BITCODE = NO;
@@ -437,6 +438,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GTMPhone",
 				);
+				MARKETING_VERSION = 2.2.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geetest.GTMPhonev2;
 				PRODUCT_NAME = "OnePass-Test";
@@ -453,6 +455,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPILER_INDEX_STORE_ENABLE = Default;
+				CURRENT_PROJECT_VERSION = 2001030916;
 				DEVELOPMENT_TEAM = 2448B7W898;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -468,6 +471,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GTMPhone",
 				);
+				MARKETING_VERSION = 2.2.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geetest.GTMPhonev2;
 				PRODUCT_NAME = "OnePass-Test";
@@ -527,6 +531,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMPILER_INDEX_STORE_ENABLE = Default;
+				CURRENT_PROJECT_VERSION = 2001030916;
 				DEVELOPMENT_TEAM = 2448B7W898;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -542,6 +547,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/GTMPhone",
 				);
+				MARKETING_VERSION = 2.2.4;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geetest.GTMPhonev2;
 				PRODUCT_NAME = "OnePass-Test";

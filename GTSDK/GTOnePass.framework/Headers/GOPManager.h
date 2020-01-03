@@ -73,6 +73,7 @@ typedef void(^GOPFailure)(NSError *error);
  @param phoneNum phone number, nonull
  */
 - (void)verifyPhoneNumber:(NSString *)phoneNum;
+- (void)verifyPhoneNumber;
 
 /**
  * @abstract 设置是否允许打印日志

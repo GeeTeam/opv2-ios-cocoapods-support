@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GTOnePassSDK'
-  s.version          = '2.2.3'
+  s.version          = '2.2.4'
   s.summary          = '极验OnePassSDK'
   s.homepage         = 'https://www.geetest.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
